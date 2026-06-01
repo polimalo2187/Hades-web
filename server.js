@@ -22,7 +22,9 @@ function send(res, status, body, type = 'text/plain; charset=utf-8') {
   res.writeHead(status, {
     'Content-Type': type,
     'X-Content-Type-Options': 'nosniff',
-    'Cache-Control': status === 200 ? 'public, max-age=3600' : 'no-store'
+    'Cache-Control': status === 200 ? 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0' : 'no-store',
+    'Pragma': 'no-cache',
+    'Expires': '0'
   });
   res.end(body);
 }

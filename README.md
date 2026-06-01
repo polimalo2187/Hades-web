@@ -27,3 +27,23 @@ npm start
 ## CTA principal
 
 https://t.me/HADES_ALPHA_bot?start=ref_2010460041
+
+## V3 mobile responsive fix
+
+This build includes a mobile-specific hero/logo fix:
+
+- Prevents horizontal overflow on phones.
+- Keeps the Hades Alpha V2 logo contained and centered.
+- Hides oversized halo layers on narrow screens.
+- Forces CTA buttons and hero layout into a clean single-column mobile view.
+
+
+## V4 mobile hard fix
+
+This version fixes the mobile hero logo overflow by:
+
+- forcing a cache-busted stylesheet/script reference in `public/index.html`;
+- adding an inline emergency mobile CSS block so old CSS cannot keep the desktop layout;
+- setting server cache headers to `no-store` for HTML/CSS/JS/assets during deployment validation;
+- forcing the hero layout to one column under 768px;
+- constraining the logo to `min(72vw, 260px)` on mobile.
