@@ -3,28 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#02030a" />
-  <meta name="description" content="Hades Alpha: plataforma inteligente de trading con señales, radar, watchlist, gestión de riesgo, rendimiento y ecosistema conectado." />
-  <title>Hades Alpha | Ecosistema Inteligente de Trading</title>
+  <meta name="theme-color" content="#050204" />
+  <meta name="description" content="Hades Alpha V2: ecosistema inteligente de trading con señales, radar, watchlist, gestión de riesgo, rendimiento, Oráculo, Sentinela y Hades Guide." />
+  <meta property="og:title" content="Hades Alpha V2 | Ecosistema Inteligente de Trading" />
+  <meta property="og:description" content="Más que señales: mercado, estrategia, riesgo, inteligencia y sistemas externos conectados en una sola plataforma." />
+  <meta property="og:image" content="/assets/hades-alpha-v2-logo.png" />
+  <title>Hades Alpha V2 | Ecosistema Inteligente de Trading</title>
+  <link rel="preload" as="image" href="/assets/hades-alpha-v2-logo.png" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <canvas id="matrixCanvas" class="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <header class="site-header" id="siteHeader">
-    <a class="brand" href="#top" aria-label="Hades Alpha">
-      <span class="brand-mark">HΔ</span>
+    <a class="brand" href="#top" aria-label="Hades Alpha V2">
+      <img src="/assets/hades-alpha-v2-logo.png" alt="Hades Alpha V2" />
       <span>
-        <strong>Hades Alpha</strong>
-        <small>Trading Ecosystem</small>
+        <strong>Hades Alpha V2</strong>
+        <small>Trading Intelligence</small>
       </span>
     </a>
     <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#ecosystem">Ecosistema</a>
-      <a href="#features">Funciones</a>
+      <a href="#functions">Funciones</a>
       <a href="#strategies">Estrategias</a>
+      <a href="#ecosystem">Ecosistema</a>
       <a href="#market">Mercado</a>
       <a href="#risk">Riesgo</a>
     </nav>
@@ -32,256 +37,172 @@
   </header>
 
   <main id="top">
-    <section class="hero section-pad">
-      <div class="orb orb-gold"></div>
-      <div class="orb orb-blue"></div>
+    <section class="hero">
+      <div class="hero-bg-rings" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Plataforma operativa de trading inteligente</div>
-          <h1>Hades Alpha no es una señal. Es una <em>infraestructura</em> para leer el mercado.</h1>
-          <p class="hero-subtitle">Señales inteligentes, radar de mercado, watchlist, inteligencia de señal, gestión de riesgo, rendimiento y sistemas externos conectados en un solo ecosistema.</p>
+          <div class="eyebrow"><span></span> Ecosistema operativo de trading</div>
+          <h1>Hades Alpha V2 no es un bot. Es una <em>máquina de lectura del mercado</em>.</h1>
+          <p>Señales inteligentes, radar, watchlist, inteligencia de señal, gestión de riesgo, historial, rendimiento, horario operativo y sistemas externos conectados para operar con más estructura.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://t.me/HADES_ALPHA_bot?start=ref_2010460041" target="_blank" rel="noopener">Entrar a Hades</a>
-            <a class="btn btn-ghost" href="#features">Ver funciones</a>
+            <a class="btn btn-primary magnet" href="https://t.me/HADES_ALPHA_bot?start=ref_2010460041" target="_blank" rel="noopener">Entrar a Hades</a>
+            <a class="btn btn-ghost magnet" href="#functions">Ver ecosistema</a>
           </div>
-          <div class="trust-row" aria-label="Módulos principales">
-            <span>Liquidity Sweep</span>
-            <span>Breakout + Reset</span>
-            <span>Bybit · OKX · Binance</span>
+          <div class="hero-metrics" aria-label="Resumen del ecosistema">
+            <div><strong>3</strong><small>Exchanges públicos</small></div>
+            <div><strong>2</strong><small>Estrategias principales</small></div>
+            <div><strong>08-23</strong><small>Horario Cuba</small></div>
           </div>
         </div>
 
-        <div class="terminal-wrap reveal delay-2" aria-label="Mockup de plataforma Hades Alpha">
-          <div class="terminal-card">
-            <div class="terminal-top">
-              <div class="traffic"><i></i><i></i><i></i></div>
-              <span>HADES_ALPHA / LIVE_ENGINE</span>
-              <b>ONLINE</b>
-            </div>
-            <div class="dashboard-mock">
-              <div class="mock-panel signal-panel">
-                <span class="panel-label">Señal inteligente</span>
-                <h3>BTCUSDT · LONG</h3>
-                <div class="price-line"><strong>Entry</strong><span>64,280.50</span></div>
-                <div class="price-line green"><strong>TP1</strong><span>65,140.00</span></div>
-                <div class="price-line green"><strong>TP2</strong><span>66,020.00</span></div>
-                <div class="price-line red"><strong>SL</strong><span>63,620.00</span></div>
-              </div>
-              <div class="mock-panel radar-panel">
-                <span class="panel-label">Radar</span>
-                <div class="radar-mini"><i></i><b></b><span></span></div>
-              </div>
-              <div class="mock-panel stats-panel">
-                <span class="panel-label">Rendimiento</span>
-                <div class="stat-bars"><i style="height:72%"></i><i style="height:48%"></i><i style="height:83%"></i><i style="height:36%"></i><i style="height:64%"></i></div>
-              </div>
-              <div class="mock-panel watch-panel">
-                <span class="panel-label">Watchlist</span>
-                <p>ETHUSDT <b>+2.8%</b></p>
-                <p>SOLUSDT <b>+4.1%</b></p>
-                <p>BNBUSDT <b>-0.6%</b></p>
-              </div>
+        <div class="hero-brand reveal delay-1">
+          <div class="logo-stage">
+            <div class="halo halo-one"></div>
+            <div class="halo halo-two"></div>
+            <img src="/assets/hades-alpha-v2-logo.png" alt="Logo Hades Alpha V2" class="main-logo" />
+            <div class="market-trail" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
           </div>
         </div>
       </div>
+      <div class="hero-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>LIQUIDITY SWEEP</span><span>BREAKOUT + RESET</span><span>BYBIT</span><span>OKX</span><span>BINANCE</span><span>NO ENTRY</span><span>TP1</span><span>TP2</span><span>RISK ENGINE</span>
+          <span>LIQUIDITY SWEEP</span><span>BREAKOUT + RESET</span><span>BYBIT</span><span>OKX</span><span>BINANCE</span><span>NO ENTRY</span><span>TP1</span><span>TP2</span><span>RISK ENGINE</span>
+        </div>
+      </div>
     </section>
 
-    <section class="problem section-pad reveal">
+    <section class="section problem reveal">
       <div class="section-head centered">
-        <span class="eyebrow"><span></span> El problema real</span>
-        <h2>Una señal sin contexto es solo un número.</h2>
-        <p>Hades Alpha está diseñado para que el usuario no opere a ciegas: cada módulo agrega lectura, control, seguimiento y estructura operativa.</p>
+        <span class="eyebrow"><span></span> El problema</span>
+        <h2>La mayoría entra por emoción. Hades Alpha organiza la decisión.</h2>
+        <p>Una señal aislada no basta. El usuario necesita contexto, entrada, riesgo, seguimiento, estado y explicación de lo que ocurrió.</p>
       </div>
-      <div class="problem-strip">
-        <div><strong>Sin estructura</strong><small>Entradas impulsivas y sin plan.</small></div>
-        <div><strong>Sin riesgo</strong><small>Operaciones sin sizing ni control.</small></div>
-        <div><strong>Sin seguimiento</strong><small>No saber si fue TP, SL o No Entry.</small></div>
-        <div><strong>Sin ecosistema</strong><small>Herramientas separadas y datos dispersos.</small></div>
-      </div>
-    </section>
-
-    <section id="ecosystem" class="ecosystem section-pad">
-      <div class="section-head reveal">
-        <span class="eyebrow"><span></span> Núcleo del ecosistema</span>
-        <h2>Todo conectado alrededor de Hades Alpha.</h2>
-        <p>La plataforma centraliza mercado, señales, riesgo, rendimiento, cuenta, guía y sistemas externos de apoyo.</p>
-      </div>
-      <div class="orbit-stage reveal delay-1">
-        <div class="core-node">
-          <strong>Hades Alpha</strong>
-          <small>Centro operativo</small>
-        </div>
-        <div class="orbit orbit-a"></div>
-        <div class="orbit orbit-b"></div>
-        <div class="orbit orbit-c"></div>
-        <span class="orbit-node n1">Señales</span>
-        <span class="orbit-node n2">Radar</span>
-        <span class="orbit-node n3">Watchlist</span>
-        <span class="orbit-node n4">Riesgo</span>
-        <span class="orbit-node n5">Oráculo</span>
-        <span class="orbit-node n6">Sentinela</span>
-        <span class="orbit-node n7">Hades Guide</span>
-        <span class="orbit-node n8">Admin</span>
+      <div class="pain-grid">
+        <article><b>Sin contexto</b><small>Copiar entradas sin saber qué está haciendo el mercado.</small></article>
+        <article><b>Sin control</b><small>Operar sin cálculo de riesgo, margen o RR real.</small></article>
+        <article><b>Sin seguimiento</b><small>No diferenciar TP, SL o una señal que nunca tocó entrada.</small></article>
+        <article><b>Sin sistema</b><small>Datos, señales, historial y análisis dispersos en lugares distintos.</small></article>
       </div>
     </section>
 
-    <section id="features" class="section-pad feature-section">
+    <section id="functions" class="section feature-section">
       <div class="section-head reveal">
-        <span class="eyebrow"><span></span> Funciones de la plataforma</span>
-        <h2>Una plataforma completa, no un bot barato de señales.</h2>
-        <p>Estas son las piezas operativas que forman la experiencia de Hades Alpha.</p>
+        <span class="eyebrow"><span></span> Funciones reales</span>
+        <h2>Todo lo que Hades Alpha pone en una sola experiencia.</h2>
+        <p>La página no vende humo: muestra el sistema completo que el usuario encuentra dentro de la plataforma.</p>
       </div>
       <div class="feature-grid">
-        <article class="feature-card reveal"><span>01</span><h3>Dashboard principal</h3><p>Vista central con señales, rendimiento, estado operativo, accesos rápidos y lectura general del sistema.</p></article>
-        <article class="feature-card reveal"><span>02</span><h3>Señales inteligentes</h3><p>Oportunidades con entrada, TP1, TP2, SL, dirección, score, estado y seguimiento operativo.</p></article>
-        <article class="feature-card reveal"><span>03</span><h3>Inteligencia de señal</h3><p>Detalle profundo de cada señal: contexto, componentes de puntuación, tracking y explicación de estado.</p></article>
-        <article class="feature-card reveal"><span>04</span><h3>Mercado</h3><p>Panel para observar activos, movimiento, volumen, variación, fuerza y condiciones relevantes.</p></article>
-        <article class="feature-card reveal"><span>05</span><h3>Radar avanzado</h3><p>Filtro de oportunidades, prioridad, dirección, alineación, riesgo, ejecución y contexto de señal.</p></article>
-        <article class="feature-card reveal"><span>06</span><h3>Watchlist personalizada</h3><p>Seguimiento de pares favoritos con cobertura pública multi-proveedor y estados de mercado.</p></article>
-        <article class="feature-card reveal"><span>07</span><h3>Gestión de riesgo</h3><p>Centro para capital, riesgo por trade, exchange, fees, slippage, leverage, margen, notional y RR neto.</p></article>
-        <article class="feature-card reveal"><span>08</span><h3>Historial</h3><p>Registro de señales pasadas para revisar qué ocurrió y cómo evolucionó cada oportunidad.</p></article>
-        <article class="feature-card reveal"><span>09</span><h3>Rendimiento</h3><p>Resultados por TP1, TP2, SL y No Entry, con lectura clara del desempeño operativo.</p></article>
-        <article class="feature-card reveal"><span>10</span><h3>Cuenta y planes</h3><p>Perfil, estado de suscripción, permisos por plan, accesos externos y configuración de usuario.</p></article>
-        <article class="feature-card reveal"><span>11</span><h3>Pagos y suscripción</h3><p>Órdenes de pago, confirmación, cancelación y activación de planes dentro del ecosistema.</p></article>
-        <article class="feature-card reveal"><span>12</span><h3>Panel administrativo</h3><p>Control interno de usuarios, planes, moderación, auditoría, salud del sistema e incidentes.</p></article>
+        <article class="feature-card reveal"><span>01</span><h3>Dashboard principal</h3><p>Vista central con señales, estado del sistema, accesos, rendimiento y módulos críticos.</p></article>
+        <article class="feature-card reveal"><span>02</span><h3>Señales inteligentes</h3><p>Entradas estructuradas con dirección, entry, TP1, TP2, SL, score, plan y estado.</p></article>
+        <article class="feature-card reveal"><span>03</span><h3>Inteligencia de señal</h3><p>Detalle de lectura, tracking, componentes de score, contexto y explicación operativa.</p></article>
+        <article class="feature-card reveal"><span>04</span><h3>Mercado</h3><p>Vista de activos, precios, volumen, rango 24h, movimiento y cobertura pública.</p></article>
+        <article class="feature-card reveal"><span>05</span><h3>Radar V2</h3><p>Filtro visual de oportunidades por prioridad, proximidad, dirección, estado y ranking.</p></article>
+        <article class="feature-card reveal"><span>06</span><h3>Watchlist</h3><p>Seguimiento personalizado de pares relevantes con datos multi-proveedor.</p></article>
+        <article class="feature-card reveal"><span>07</span><h3>Gestión de riesgo</h3><p>Cálculo de tamaño, margen, leverage, pérdida al stop, fees, slippage y RR neto.</p></article>
+        <article class="feature-card reveal"><span>08</span><h3>Historial</h3><p>Registro de señales para analizar desempeño, evolución y resultados pasados.</p></article>
+        <article class="feature-card reveal"><span>09</span><h3>Rendimiento</h3><p>Lectura de TP1, TP2, SL y No Entry para entender qué pasó realmente.</p></article>
+        <article class="feature-card reveal"><span>10</span><h3>Cuenta</h3><p>Perfil, plan, permisos, accesos externos, ajustes y centro de control del usuario.</p></article>
+        <article class="feature-card reveal"><span>11</span><h3>Planes y pagos</h3><p>Suscripciones, órdenes, activación de acceso y control de permisos por nivel.</p></article>
+        <article class="feature-card reveal"><span>12</span><h3>Panel admin</h3><p>Gestión interna de usuarios, planes, señales, auditoría, moderación y salud del sistema.</p></article>
       </div>
     </section>
 
-    <section id="strategies" class="strategies section-pad">
+    <section id="strategies" class="section strategies">
       <div class="section-head centered reveal">
-        <span class="eyebrow"><span></span> Motor de estrategias</span>
-        <h2>Dos lecturas. Una misma idea: no perseguir el mercado.</h2>
+        <span class="eyebrow"><span></span> Motor estratégico</span>
+        <h2>Dos estrategias para dejar de perseguir el precio.</h2>
       </div>
       <div class="strategy-grid">
-        <article class="strategy-card gold reveal">
+        <article class="strategy-card strategy-gold reveal">
           <div class="strategy-icon">⚔</div>
           <h3>Liquidity Sweep</h3>
-          <p>Lectura de barridas de liquidez: zonas donde el mercado limpia posiciones y puede buscar reacción. Usa filtros de sweep, volumen, confirmación, pullback, RR y avance hacia objetivos.</p>
-          <ul>
-            <li>Barridas de liquidez</li>
-            <li>Confirmación operativa</li>
-            <li>Entrada anticipada con espera</li>
-            <li>Filtros endurecidos para reducir señales flojas</li>
-          </ul>
+          <p>Detecta barridas de liquidez, recuperación, confirmación y zonas donde el mercado puede buscar reacción. Sus filtros están ajustados para reducir señales débiles sin apagar la estrategia.</p>
+          <ul><li>Barrida mínima</li><li>Confirmación de volumen</li><li>Reclaim estructural</li><li>Entrada anticipada</li></ul>
         </article>
-        <article class="strategy-card blue reveal delay-1">
+        <article class="strategy-card strategy-blue reveal delay-1">
           <div class="strategy-icon">↗</div>
           <h3>Breakout + Reset</h3>
-          <p>Detecta rupturas de estructura, evita perseguir el precio y espera una zona de reset o retroceso para una entrada más ordenada.</p>
-          <ul>
-            <li>Breakout reciente</li>
-            <li>Reset estructural</li>
-            <li>Señal anticipada</li>
-            <li>Estado pendiente hasta tocar entrada</li>
-          </ul>
+          <p>Detecta ruptura de estructura, evita perseguir el movimiento y espera una zona de reset para una entrada más ordenada.</p>
+          <ul><li>Rompimiento reciente</li><li>Reset pendiente</li><li>Señal anticipada</li><li>Control de entrada</li></ul>
         </article>
       </div>
-    </section>
-
-    <section class="signal-states section-pad reveal">
-      <div class="section-head">
-        <span class="eyebrow"><span></span> Estados claros</span>
-        <h2>El usuario sabe qué pasó con cada señal.</h2>
-        <p>Hades Alpha diferencia entre una señal que tocó entrada y una que nunca activó operación.</p>
-      </div>
-      <div class="states-row">
-        <div class="state-pill waiting">Esperando entrada</div>
-        <div class="state-pill active">Entrada tocada</div>
-        <div class="state-pill tp">TP1</div>
-        <div class="state-pill tp2">TP2</div>
-        <div class="state-pill sl">SL</div>
-        <div class="state-pill noentry">No Entry</div>
+      <div class="state-line reveal delay-2">
+        <span>Esperando entrada</span><span>Entrada tocada</span><span>TP1</span><span>TP2</span><span>SL</span><span>No Entry</span>
       </div>
     </section>
 
-    <section id="market" class="market section-pad">
+    <section id="market" class="section market-section">
       <div class="market-layout">
         <div class="section-head reveal">
           <span class="eyebrow"><span></span> Datos multi-exchange</span>
           <h2>Más cobertura. Menos dependencia de una sola fuente.</h2>
-          <p>Hades Alpha trabaja con proveedores públicos para mejorar estabilidad y disponibilidad de datos de mercado.</p>
+          <p>Hades Alpha trabaja con proveedores públicos de mercado para mejorar estabilidad, cobertura y disponibilidad de datos.</p>
+          <div class="exchange-row">
+            <div><strong>Bybit</strong><small>Provider público</small></div>
+            <div><strong>OKX</strong><small>Provider público</small></div>
+            <div><strong>Binance</strong><small>Provider público</small></div>
+          </div>
         </div>
-        <div class="exchange-stack reveal delay-1">
-          <div class="exchange-card bybit"><b>Bybit</b><span>Market data provider</span></div>
-          <div class="exchange-card okx"><b>OKX</b><span>Market data provider</span></div>
-          <div class="exchange-card binance"><b>Binance</b><span>Market data provider</span></div>
-        </div>
-      </div>
-      <div class="market-note reveal">Sistema con cobertura combinada, fallback, cache y protección para reducir llamadas innecesarias.</div>
-    </section>
-
-    <section id="risk" class="risk section-pad">
-      <div class="risk-card reveal">
-        <div>
-          <span class="eyebrow"><span></span> Riesgo, rendimiento y control</span>
-          <h2>Operar sin riesgo definido no es estrategia. Es improvisación.</h2>
-          <p>El centro de riesgo permite estimar capital, riesgo por operación, leverage, fees, slippage, margen requerido, notional y escenarios por objetivo.</p>
-        </div>
-        <div class="risk-metrics">
-          <div><small>Riesgo</small><strong>1.0%</strong></div>
-          <div><small>Leverage</small><strong>10x</strong></div>
-          <div><small>RR neto</small><strong>2.4R</strong></div>
-          <div><small>Estado</small><strong>Operable</strong></div>
+        <div class="market-console reveal delay-1">
+          <div class="console-top"><b>PUBLIC_MARKET_PROVIDERS</b><span>LIVE</span></div>
+          <code>providers = [bybit, okx, binance]</code>
+          <code>strategy = merged_coverage + fallback</code>
+          <code>states = TP1 · TP2 · SL · No Entry</code>
+          <code>session = 08:00 → 23:00 America/Havana</code>
+          <div class="console-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
       </div>
     </section>
 
-    <section class="session section-pad reveal">
-      <div class="session-panel">
-        <div>
-          <span class="eyebrow"><span></span> Horario operativo</span>
-          <h2>Motor activo de 8:00 AM a 11:00 PM, hora de Cuba.</h2>
-          <p>Fuera de horario, el motor operativo se pausa para proteger estabilidad, reducir consumo innecesario y mantener control del sistema.</p>
-        </div>
-        <div class="clock-card">
-          <div class="clock-ring"><span></span></div>
-          <strong>08:00 → 23:00</strong>
-          <small>America/Havana</small>
+    <section id="risk" class="section risk-section reveal">
+      <div class="section-head centered">
+        <span class="eyebrow"><span></span> Control operativo</span>
+        <h2>Riesgo, horario y seguimiento en el centro del sistema.</h2>
+        <p>El objetivo no es prometer ganancias. Es darle al usuario una estructura más clara para mirar el mercado y controlar sus decisiones.</p>
+      </div>
+      <div class="control-grid">
+        <article><strong>08:00 - 23:00</strong><span>Horario operativo Cuba</span></article>
+        <article><strong>No Entry</strong><span>La señal no tocó entrada</span></article>
+        <article><strong>RR Neto</strong><span>Riesgo calculado con más claridad</span></article>
+      </div>
+    </section>
+
+    <section id="ecosystem" class="section ecosystem-section">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span></span> Ecosistema externo</span>
+        <h2>Hades Alpha también se apoya en sistemas conectados.</h2>
+      </div>
+      <div class="ecosystem-grid">
+        <article class="eco-card reveal"><span>🔮</span><h3>Oráculo</h3><p>Sistema de predicciones de señales que apoya la visión predictiva dentro del ecosistema Hades Alpha.</p></article>
+        <article class="eco-card reveal delay-1"><span>🛡</span><h3>Sentinela</h3><p>Sistema externo de apoyo y monitoreo para fortalecer la estructura operativa del ecosistema.</p></article>
+        <article class="eco-card reveal delay-2"><span>📘</span><h3>Hades Guide / JavaGuide</h3><p>Herramienta para conocer, entender y aprender a usar correctamente todo el ecosistema.</p></article>
+      </div>
+    </section>
+
+    <section class="section architecture reveal">
+      <div class="architecture-card">
+        <div class="arch-core"><img src="/assets/hades-alpha-v2-logo.png" alt="Hades Alpha V2" /><strong>Hades Alpha V2</strong></div>
+        <div class="arch-items">
+          <span>Señales</span><span>Radar</span><span>Watchlist</span><span>Riesgo</span><span>Mercado</span><span>Historial</span><span>Cuenta</span><span>Admin</span><span>Oráculo</span><span>Sentinela</span><span>Hades Guide</span>
         </div>
       </div>
     </section>
 
-    <section class="external section-pad">
-      <div class="section-head centered reveal">
-        <span class="eyebrow"><span></span> Sistemas externos conectados</span>
-        <h2>Hades Alpha opera dentro de un ecosistema.</h2>
-      </div>
-      <div class="external-grid">
-        <article class="external-card reveal"><div>🔮</div><h3>Oráculo</h3><p>Sistema de predicciones de señales que apoya la visión predictiva del ecosistema Hades Alpha.</p></article>
-        <article class="external-card reveal delay-1"><div>🛡</div><h3>Sentinela</h3><p>Sistema externo de apoyo y monitoreo para fortalecer la estructura operativa del ecosistema.</p></article>
-        <article class="external-card reveal delay-2"><div>📘</div><h3>Hades Guide / JavaGuide</h3><p>Herramienta para conocer, entender y aprender a usar correctamente el ecosistema completo.</p></article>
-      </div>
-    </section>
-
-    <section class="admin section-pad reveal">
-      <div class="admin-grid">
-        <div>
-          <span class="eyebrow"><span></span> Seguridad operativa</span>
-          <h2>Diseñado para control, permisos y trazabilidad.</h2>
-          <p>Hades Alpha incluye cuenta, planes, pagos, permisos por nivel, ajustes, panel administrativo, auditoría, salud del sistema e incidentes.</p>
-        </div>
-        <div class="admin-console">
-          <p><span>auth</span> Telegram Mini App + sesión firmada</p>
-          <p><span>plans</span> FREE · PLUS · PREMIUM</p>
-          <p><span>admin</span> usuarios · moderación · auditoría</p>
-          <p><span>system</span> scanner · scheduler · provider health</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta section-pad reveal">
-      <div class="cta-box">
-        <h2>Entra a Hades Alpha y empieza a mirar el mercado con estructura.</h2>
-        <p>Señales, radar, mercado, riesgo, inteligencia y ecosistema conectado desde una sola plataforma.</p>
-        <a class="btn btn-primary huge" href="https://t.me/HADES_ALPHA_bot?start=ref_2010460041" target="_blank" rel="noopener">Entrar a Hades</a>
-      </div>
+    <section class="final-cta">
+      <div class="final-glow" aria-hidden="true"></div>
+      <img src="/assets/hades-alpha-v2-logo.png" alt="Hades Alpha V2" class="cta-logo reveal" />
+      <h2 class="reveal delay-1">El mercado se mueve. Hades Alpha te ayuda a leerlo con estructura.</h2>
+      <p class="reveal delay-2">Señales, radar, mercado, riesgo, inteligencia y ecosistema conectado en una sola plataforma.</p>
+      <a class="btn btn-primary btn-mega reveal delay-3" href="https://t.me/HADES_ALPHA_bot?start=ref_2010460041" target="_blank" rel="noopener">Entrar a Hades</a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="brand mini"><span class="brand-mark">HΔ</span><strong>Hades Alpha</strong></div>
-    <p>Trading con estructura, contexto y control. No se prometen ganancias; se entrega infraestructura para operar con más información.</p>
+    <span>Hades Alpha V2</span>
+    <small>Trading intelligence ecosystem · No garantiza resultados financieros.</small>
   </footer>
 
   <script src="/app.js"></script>
