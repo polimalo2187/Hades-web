@@ -1,0 +1,12 @@
+{
+  "name": "hades-alpha-promo-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing premium para promocionar Hades Alpha en Railway.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
