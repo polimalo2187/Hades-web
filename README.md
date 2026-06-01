@@ -1,24 +1,29 @@
-# Hades Alpha Promo Web
+# Hades Alpha V2 Promo Web
 
-Landing page premium y animada para promocionar Hades Alpha.
+Landing page promocional premium para Hades Alpha V2, lista para Railway.
 
 ## Ejecutar local
+
+```bash
+npm install
+npm start
+```
+
+## Railway
+
+El proyecto incluye `railway.json` y `server.js`. Railway debe ejecutar:
 
 ```bash
 npm start
 ```
 
-Abre `http://localhost:3000`.
+## Archivos principales
 
-## Deploy en Railway
-
-1. Sube esta carpeta a un repositorio GitHub.
-2. Crea un servicio nuevo en Railway desde ese repo.
-3. Railway ejecutará `npm start` automáticamente.
-4. Healthcheck disponible en `/health`.
+- `public/index.html`
+- `public/styles.css`
+- `public/app.js`
+- `public/assets/hades-alpha-v2-logo.png`
 
 ## CTA principal
 
-El botón `Entrar a Hades` apunta a:
-
-`https://t.me/HADES_ALPHA_bot?start=ref_2010460041`
+https://t.me/HADES_ALPHA_bot?start=ref_2010460041
