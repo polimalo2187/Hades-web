@@ -47,3 +47,17 @@ This version fixes the mobile hero logo overflow by:
 - setting server cache headers to `no-store` for HTML/CSS/JS/assets during deployment validation;
 - forcing the hero layout to one column under 768px;
 - constraining the logo to `min(72vw, 260px)` on mobile.
+
+## V5 - Comunidad WhatsApp
+
+Se agregó la comunidad oficial de WhatsApp como CTA visible en:
+
+- Hero principal
+- Nueva sección `Comunidad oficial`
+- CTA final
+
+Enlace:
+
+https://chat.whatsapp.com/KqkL8aDgaHL0TJmVWpYGzD
+
+También se actualizó el cache-busting de `styles.css` y `app.js` a `whatsapp-community-v5`.
